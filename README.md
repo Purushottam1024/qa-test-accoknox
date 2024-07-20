@@ -1,3 +1,95 @@
+# Problem Statement 1 (Solution)
+
+## Prerequisites
+
+- Minikube (Tested only on Ubuntu 22.04)
+- Python 3
+
+### Steps to Deploy and Run the Test Script
+
+#### Step 1: Clone the Repository
+
+```sh
+git clone https://github.com/Purushottam1024/qa-test-accoknox.git
+```
+
+#### Step 2: Change Directory to `qa-test-accoknox`
+
+```sh
+cd qa-test-accoknox
+```
+
+#### Step 3: Clone the `qa-test` Repository
+
+```sh
+git clone https://github.com/Vengatesh-m/qa-test
+```
+
+#### Step 4: Copy Required Files
+
+```sh
+cp deployment_minikube.sh qa-test/
+cp requirement.txt qa-test/
+cp test_script_problem_1.py qa-test/
+```
+
+#### Step 5: Change Directory to `qa-test`
+
+```sh
+cd qa-test
+```
+
+#### Step 6: Change the Mode of `deployment_minikube.sh` (if it is a regular file)
+
+```sh
+sudo chmod +x deployment_minikube.sh
+```
+
+#### Step 7: Execute the Deployment Script
+
+```sh
+./deployment_minikube.sh
+```
+
+This will deploy the application using Minikube. You can access the application at the following URLs:
+
+- Backend: `http://localhost:3000/greet`
+- Frontend: `http://{minikube_ip}:30001/` (e.g., `http://192.168.49.2:30001/`)
+
+#### Check the Minikube IP
+
+```sh
+minikube ip
+```
+
+### How to Run the Test Script
+
+#### Requirements
+
+- Python 3
+
+#### Step 1: Install Required Python Packages
+
+Create a Python 3 virtual environment if required, or simply install the requirements into your host machine using the following command:
+
+```sh
+pip3 install -r requirement.txt
+```
+
+#### Step 2: Run the Test Script
+
+Use the `pytest` command as shown below:
+
+```sh
+pytest -vs test_script_problem_1.py
+```
+---
+
+**:warning: Note:**
+
+**For the problem statements 2, execute the code from the `qa-test-accoknox` location and follow the README file accordingly.**
+
+---
 # Problem Statement 2 (Solution-1)
 
 ## System Health Monitoring Script
@@ -50,6 +142,7 @@ This script continuously monitors the health of a Linux system by checking CPU u
 - The script runs indefinitely and checks system health every 60 seconds. You can adjust the sleep interval within the script if needed.
 - Ensure that the log file path `/var/log/system_health.log` is writable or change it according to your permissions.
 
+---
 
 # Problem Statement 2 (Solution-4)
 
